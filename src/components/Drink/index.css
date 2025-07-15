@@ -19,6 +19,7 @@
 
 .drink__info {
   margin-left: 1rem;
+  height: 100%;
 }
 
 .drink__controls {
@@ -52,24 +53,4 @@
 
 .order-btn:active {
   background-color: #e67e51;
-}
-
-/* Drink - Layer */
-.layer {
-  display: flex;
-  padding: 0.25rem;
-}
-
-.layer__color {
-  width: 1rem;
-  height: 1rem;
-  margin-right: 0.5rem;
-  border-radius: 0.5rem;
-  background-color: brown;
-  box-shadow: 0 0 5px #333;
-}
-
-.layer__label {
-  height: 1rem;
-  line-height: 1rem;
 }

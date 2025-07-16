@@ -14,14 +14,14 @@ console.log(data.data);
 
 document.querySelector('#root').innerHTML = render(
   <div className="page">
-    <Header />
+    <Header showMenu={true} />
     <main>
       <Banner />
       <Menu drinks={data.data}/>
       <Gallery />
       <Contact />
     </main>
-      <Footer />
+    <Footer />
   </div>
 );
 

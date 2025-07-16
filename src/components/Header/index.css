@@ -40,6 +40,14 @@ nav a:hover {
   z-index: 1;
 }
 
+.simple-nav {
+  width: 15rem;
+}
+
+.simple-nav a {
+  margin: 0;
+}
+
 .rollout-nav a {
   display: block;
 }
@@ -65,6 +73,7 @@ nav a:hover {
 
 @media (min-width: 768px) {
   .navigation {
+    align-items: center;
     flex-direction: row;
   }
 

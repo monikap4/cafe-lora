@@ -35,3 +35,42 @@ navBtn.addEventListener("click", function () {
 rolloutNav.addEventListener("click", function () {
   rolloutNav.classList.add("nav-closed");
 });
+
+const onSubmit = async (event) => {
+  event.preventDefault();
+
+  const form = event.target;
+  const id = form.dataset.id;
+
+  const isOrdered = form.querySelector(".order-btn").classList.contains("order-btn--ordered");
+
+  const patchData = [
+    {
+      op: "replace",
+      path: "/ordered",
+      value: !isOrdered,
+    },
+  ];
+
+  const response = await fetch(`http://localhost:4000/api/drinks/${id}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(patchData),
+  });
+
+  if (!response.ok) {
+    alert("Chyba při komunikaci se serverem.");
+    return;
+  }
+
+  const result = await response.json();
+  console.log("Odpověď z API:", result);
+
+  window.location.reload();
+};
+
+document.querySelectorAll(".drink__controls").forEach((form) =>
+  form.addEventListener("submit", onSubmit)
+);
